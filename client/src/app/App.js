@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { appConfig } from './config';
 import * as Routes from './routes';
-import { HomePage, ProjectPage, ProjectsPage, SignInPage } from './pages';
+import { HomePage, ProjectPage, ProjectsPage, SignInPage, Overview, MovieDetails } from './pages';
 
 import styles from './App.module.scss';
 
@@ -20,6 +20,8 @@ function App() {
                   <Route exact path={Routes.PROJECT_DETAILS} component={ ProjectPage }/>
                   <Route exact path={Routes.PROJECTS} component={ ProjectsPage }/>
                   <Route exact path={Routes.AUTH_SIGN_IN} component={ SignInPage }/>
+                  <Route exact path={Routes.OVERVIEW} component={ Overview }/>
+                  <Route exact path={Routes.MOVIE_DETAILS} component={ MovieDetails }/>
               </Switch>
             </Router>
           </FirestoreProvider>
