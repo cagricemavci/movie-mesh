@@ -16,9 +16,14 @@ const TrendingSeries = () => {
 
 
     const fetchTrendingSeries = async () => {
-        const response = await fetch(URL);
-        const data = await response.json();
-        setTrendingSeries(data.results)
+        try {
+            const response = await fetch(URL);
+            const data = await response.json();
+            setTrendingSeries(data.results)
+        } catch (error) {
+            
+        }
+    
     }   
 
     return (

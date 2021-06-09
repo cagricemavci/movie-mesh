@@ -10,9 +10,9 @@ const SerieDetail = ({matchData}) => {
     const API_CREDITS = `https://api.themoviedb.org/3/tv/${matchData.params.id}/credits?api_key=${API_KEY}&language=en-US`
     
     useEffect(async () => {
-        await fetchSerieDetail();
-        await fetchSerieReviews();
-        await fetchSerieCredits();
+        fetchSerieDetail();
+        fetchSerieReviews();
+        fetchSerieCredits();
     }, [])
 
     const [serieDetail, setSerieDetail] = useState([])
@@ -20,21 +20,36 @@ const SerieDetail = ({matchData}) => {
     const [serieCredits, setSerieCredits] = useState([])
 
     const fetchSerieDetail = async () => {
-        const response = await fetch(API_URL);
-        const data = await response.json();
-        setSerieDetail(data)
+        try {
+            const response = await fetch(API_URL);
+            const data = await response.json();
+            setSerieDetail(data)
+        } catch (error) {
+            
+        }
+       
     }
 
     const fetchSerieReviews = async () => {
-        const response = await fetch(API_REVIEWS);
-        const data = await response.json()
-        setSerieReviews(data.results)
+        try {
+            const response = await fetch(API_REVIEWS);
+            const data = await response.json()
+            setSerieReviews(data.results)
+        } catch (error) {
+            
+        }
+        
     }
 
     const fetchSerieCredits = async () => {
-        const response = await fetch(API_CREDITS);
-        const data = await response.json()
-        setSerieCredits(data.cast)
+        try {
+            const response = await fetch(API_CREDITS);
+            const data = await response.json()
+            setSerieCredits(data.cast)
+        } catch (error) {
+            
+        }
+      
     }
     
     return (

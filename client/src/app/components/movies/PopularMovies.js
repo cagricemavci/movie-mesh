@@ -16,9 +16,14 @@ const PopularMovies = () => {
 
 
     const fetchPopularMovies = async () => {
-        const response = await fetch(URL);
-        const data = await response.json();
-        setPopularMovies(data.results)
+        try {
+            const response = await fetch(URL);
+            const data = await response.json();
+            setPopularMovies(data.results)
+
+        } catch (error) {
+            
+        }
     }   
 
     return (

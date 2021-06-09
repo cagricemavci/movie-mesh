@@ -16,9 +16,14 @@ const UpComingSeries = () => {
 
 
     const fetchUpComingSeries = async () => {
-        const response = await fetch(URL);
-        const data = await response.json();
-        setUpComingSeries(data.results)
+        try {
+            const response = await fetch(URL);
+            const data = await response.json();
+            setUpComingSeries(data.results)
+        } catch (error) {
+            
+        }
+       
     }   
 
     return (

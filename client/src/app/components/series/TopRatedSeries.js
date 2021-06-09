@@ -16,9 +16,14 @@ const TopRatedSeries = () => {
 
 
     const fetchTopRatedSeries = async () => {
-        const response = await fetch(URL);
-        const data = await response.json();
-        setTopRatedSeries(data.results)
+        try {
+            const response = await fetch(URL);
+            const data = await response.json();
+            setTopRatedSeries(data.results)
+        } catch (error) {
+            
+        }
+       
     }   
 
     return (

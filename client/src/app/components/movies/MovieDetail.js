@@ -9,33 +9,47 @@ const MovieDetail = ({matchData}) => {
     const API_REVIEWS = `https://api.themoviedb.org/3/movie/${matchData.params.id}/reviews?api_key=${API_KEY}&language=en-US`
     const API_CREDITS = `https://api.themoviedb.org/3/movie/${matchData.params.id}/credits?api_key=${API_KEY}&language=en-US`
     
-    useEffect(async () => {
-        await fetchMovieDetail();
-        await fetchMovieReviews();
-        await fetchMovieCredits();
-    }, [])
-
     const [movieDetail, setMovieDetail] = useState([])
     const [movieReviews, setMovieReviews] = useState([])
     const [movieCredits, setMovieCredits] = useState([])
 
 
+    useEffect(async () => {
+        fetchMovieDetail();
+        fetchMovieReviews();
+        fetchMovieCredits();
+    }, [])
+
     const fetchMovieDetail = async () => {
-        const response = await fetch(API_URL);
-        const data = await response.json();
-        setMovieDetail(data)
+        try {
+            const response = await fetch(API_URL);
+            const data = await response.json();
+            setMovieDetail(data)
+        } catch (error) {
+            
+        }
     }
 
     const fetchMovieReviews = async () => {
-        const response = await fetch(API_REVIEWS);
-        const data = await response.json()
-        setMovieReviews(data.results)
+        try {
+            const response = await fetch(API_REVIEWS);
+            const data = await response.json()
+            setMovieReviews(data.results)
+        } catch (error) {
+            
+        }
+       
     }
 
     const fetchMovieCredits = async () => {
-        const response = await fetch(API_CREDITS);
-        const data = await response.json()
-        setMovieCredits(data.cast)
+        try {
+            const response = await fetch(API_CREDITS);
+            const data = await response.json()
+            setMovieCredits(data.cast)
+        } catch (error) {
+            
+        }
+       
     }
     
     return (

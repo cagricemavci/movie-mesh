@@ -16,9 +16,14 @@ const LatestSeries = () => {
 
 
     const fetchLatestSeries = async () => {
-        const response = await fetch(URL);
-        const data = await response.json();
-        setLatestSeries(data)
+        try {
+            const response = await fetch(URL);
+            const data = await response.json();
+            setLatestSeries(data)
+        } catch (error) {
+            
+        }
+      
     }   
 
     return (

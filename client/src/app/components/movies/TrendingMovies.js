@@ -16,9 +16,14 @@ const TrendingMovies = () => {
 
 
     const fetchTrendingMovies = async () => {
-        const response = await fetch(URL);
-        const data = await response.json();
-        setTrendingMovies(data.results)
+        try {
+            const response = await fetch(URL);
+            const data = await response.json();
+            setTrendingMovies(data.results)
+        } catch (error) {
+            
+        }
+       
     }   
 
     return (

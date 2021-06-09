@@ -14,11 +14,14 @@ const UpComingMovies = () => {
 
     const [upComingMovies, setUpComingMovies] = useState([])
 
-
     const fetchUpComingMovies = async () => {
-        const response = await fetch(URL);
-        const data = await response.json();
-        setUpComingMovies(data.results)
+        try {
+            const response = await fetch(URL);
+            const data = await response.json();
+            setUpComingMovies(data.results)
+        } catch (error) {
+            
+        }
     }   
 
     return (

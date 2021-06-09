@@ -16,9 +16,14 @@ const TopRatedMovies = () => {
 
 
     const fetchTopRatedMovies = async () => {
-        const response = await fetch(URL);
-        const data = await response.json();
-        setTopRatedMovies(data.results)
+        try {
+            const response = await fetch(URL);
+            const data = await response.json();
+            setTopRatedMovies(data.results)
+
+        } catch (error) {
+            
+        }
     }   
 
     return (

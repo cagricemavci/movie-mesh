@@ -8,18 +8,22 @@ const LatestMovies = () => {
     const API_KEY = "d67321089641af48cd191befebe3f6f6"
     const URL = `https://api.themoviedb.org/3/movie/latest?api_key=${API_KEY}&language=en-US&page=1`
 
+    const [latestMovies, setLatestMovies] = useState([])
+
     useEffect(() => {
         fetchLatestMovies();
     }, [])
 
-    const [latestMovies, setLatestMovies] = useState([])
-
-
     const fetchLatestMovies = async () => {
-        const response = await fetch(URL);
-        const data = await response.json();
-        setLatestMovies(data)
-    }   
+        try {
+            const response = await fetch(URL);
+            const data = await response.json();
+            setLatestMovies(data)
+        } catch (error) {
+            
+        }
+        
+    }
 
     return (
         <div className={styles.LatestMovies}>
