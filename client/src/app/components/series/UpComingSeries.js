@@ -25,9 +25,9 @@ const UpComingSeries = () => {
         <div className={styles.UpComingSeries}>
             <h2>UpComing Series:</h2>
             <ul>
-                {upComingSeries.map(serie => (
+                {upComingSeries && upComingSeries.map(serie => (
                     <li key={serie.id}>
-                        <Link to={`/Series/${serie.id}`}>
+                        <Link to={`/series/${serie.id}`}>
                             {serie.name}
                         </Link>
                     </li>    

@@ -24,8 +24,7 @@ const LatestSeries = () => {
     return (
         <div className={styles.LatestSeries}>
             <h2>Latest Series:</h2>
-           <p>{latestSeries.title}</p>
-           <p>{latestSeries.overview}</p>
+           <p>{latestSeries.name}</p>
            <p>{latestSeries.overview}</p>
            {latestSeries.poster_path && <img src={`https://image.tmdb.org/t/p/w500/${latestSeries.poster_path}`} alt={latestSeries.title}/>}
            {latestSeries.genres && latestSeries.genres.map(genre => (

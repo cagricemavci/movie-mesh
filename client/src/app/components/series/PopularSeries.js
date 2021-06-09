@@ -8,8 +8,8 @@ const PopularSeries = () => {
     const API_KEY = "d67321089641af48cd191befebe3f6f6"
     const URL = `https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}&language=en-US&page=1`
 
-    useEffect(() => {
-        fetchPopularSeries();
+    useEffect(async () => {
+        await fetchPopularSeries();
     }, [])
 
     const [popularSeries, setPopularSeries] = useState([])
@@ -19,7 +19,7 @@ const PopularSeries = () => {
         const response = await fetch(URL);
         const data = await response.json();
         setPopularSeries(data.results)
-    }   
+    }
 
     return (
         <div className={styles.PopularSeries}>

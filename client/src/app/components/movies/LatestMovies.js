@@ -26,7 +26,7 @@ const LatestMovies = () => {
             <h2>Latest Movies:</h2>
             <Link to={`/movies/${latestMovies.id}`}>
                 <p>{latestMovies.title}</p>
-                <p>{latestMovies.overview}</p>
+            </Link>
                 <p>{latestMovies.overview}</p>
                 {latestMovies.poster_path && <img src={`https://image.tmdb.org/t/p/w500/${latestMovies.poster_path}`} alt={latestMovies.title}/>}
                 {latestMovies.genres && latestMovies.genres.map(genre => (
@@ -34,7 +34,6 @@ const LatestMovies = () => {
                         {genre.name}
                     </li>    
                 ))}
-            </Link>
           
         </div>
     )

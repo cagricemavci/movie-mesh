@@ -5,6 +5,7 @@ import ProjectsPage from './ProjectsPage';
 import SignInPage from './SignInPage';
 import Browse from './Browse';
 import MovieDetails from './MovieDetails';
+import SerieDetails from './SerieDetails';
 
 export {
   HomePage,
@@ -13,5 +14,6 @@ export {
   ProjectsPage,
   SignInPage,
   Browse,
-  MovieDetails
+  MovieDetails,
+  SerieDetails
 };

@@ -22,7 +22,7 @@ function App() {
                   <Route exact path={Routes.AUTH_SIGN_IN} component={ SignInPage }/>
                   <Route exact path={Routes.BROWSE} component={ Browse }/>
                   <Route exact path={Routes.MOVIE_DETAILS} component={ MovieDetails }/>
-                  <Route exact path={Routes.SERIE_DETAILS} component={ MovieDetails }/>
+                  <Route exact path={Routes.SERIE_DETAILS} component={ SerieDetails }/>
               </Switch>
             </Router>
           </FirestoreProvider>
