@@ -1,0 +1,43 @@
+import React, {useState, useEffect} from 'react'
+import {Link} from 'react-router-dom'
+
+import styles from './LatestMovies.module.scss'
+
+
+const LatestMovies = () => {
+    const API_KEY = "d67321089641af48cd191befebe3f6f6"
+    const URL = `https://api.themoviedb.org/3/movie/latest?api_key=${API_KEY}&language=en-US&page=1`
+
+    useEffect(() => {
+        fetchLatestMovies();
+    }, [])
+
+    const [latestMovies, setLatestMovies] = useState([])
+
+
+    const fetchLatestMovies = async () => {
+        const response = await fetch(URL);
+        const data = await response.json();
+        setLatestMovies(data)
+    }   
+
+    return (
+        <div className={styles.LatestMovies}>
+            <h2>Latest Movies:</h2>
+            <Link to={`/movies/${latestMovies.id}`}>
+                <p>{latestMovies.title}</p>
+                <p>{latestMovies.overview}</p>
+                <p>{latestMovies.overview}</p>
+                {latestMovies.poster_path && <img src={`https://image.tmdb.org/t/p/w500/${latestMovies.poster_path}`} alt={latestMovies.title}/>}
+                {latestMovies.genres && latestMovies.genres.map(genre => (
+                    <li key={genre.id}>
+                        {genre.name}
+                    </li>    
+                ))}
+            </Link>
+          
+        </div>
+    )
+}
+
+export default LatestMovies

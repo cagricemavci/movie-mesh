@@ -3,10 +3,10 @@ import PopularMovies from '../components/movies/PopularMovies'
 import UpComingMovies from '../components/movies/UpComingMovies';
 import TopRatedMovies from '../components/movies/TopRatedMovies';
 
-const FilmsSeries = () => {
+const Browse = () => {
   return (
     <BaseLayout>
-      <h1>FilmsSeries</h1>
+      <h1>Browse</h1>
       <PopularMovies />
       <UpComingMovies />
       <TopRatedMovies />
@@ -14,4 +14,4 @@ const FilmsSeries = () => {
   );
 };
 
-export default FilmsSeries;
+export default Browse;

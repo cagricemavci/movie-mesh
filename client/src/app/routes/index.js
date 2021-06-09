@@ -7,5 +7,6 @@ export const POST_DETAILS = '/posts/:id';
 export const AUTH_SIGN_IN = '/auth/signin';
 export const AUTH_SIGN_OUT = '/auth/signout';
 export const FOUROFOUR = '/404';
-export const FILMSSERIES = '/FilmsSeries'
+export const BROWSE = '/Browse'
 export const MOVIE_DETAILS = '/movies/:id';
+export const SERIE_DETAILS = '/series/:id';

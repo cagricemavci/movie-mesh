@@ -3,7 +3,7 @@ import NotFoundPage from './NotFoundPage';
 import ProjectPage from './ProjectPage';
 import ProjectsPage from './ProjectsPage';
 import SignInPage from './SignInPage';
-import FilmsSeries from './FilmsSeries';
+import Browse from './Browse';
 import MovieDetails from './MovieDetails';
 
 export {
@@ -12,6 +12,6 @@ export {
   ProjectPage,
   ProjectsPage,
   SignInPage,
-  FilmsSeries,
+  Browse,
   MovieDetails
 };
