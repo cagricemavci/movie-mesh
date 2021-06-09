@@ -3,8 +3,9 @@ import NotFoundPage from './NotFoundPage';
 import ProjectPage from './ProjectPage';
 import ProjectsPage from './ProjectsPage';
 import SignInPage from './SignInPage';
-import Overview from './Overview';
+import Browse from './Browse';
 import MovieDetails from './MovieDetails';
+import SerieDetails from './SerieDetails';
 
 export {
   HomePage,
@@ -12,6 +13,7 @@ export {
   ProjectPage,
   ProjectsPage,
   SignInPage,
-  Overview,
-  MovieDetails
+  Browse,
+  MovieDetails,
+  SerieDetails
 };

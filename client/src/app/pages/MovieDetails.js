@@ -5,7 +5,7 @@ import MovieDetail from '../components/movies/MovieDetail'
 const MovieDetails = ({match}) => {
   return (
     <BaseLayout>
-      <p>HOME PAGE</p>
+      <p>Movie detail</p>
 
       <MovieDetail matchData={match} />
     </BaseLayout>
