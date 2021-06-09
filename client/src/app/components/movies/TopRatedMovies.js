@@ -1,31 +1,31 @@
 import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 
-import styles from './PopularMovies.module.scss'
+import styles from './TopRatedMovies.module.scss'
 
 
-const PopularMovies = () => {
+const TopRatedMovies = () => {
     const API_KEY = "d67321089641af48cd191befebe3f6f6"
-    const URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`
+    const URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`
 
     useEffect(() => {
-        fetchPopularMovies();
+        fetchTopRatedMovies();
     }, [])
 
-    const [popularMovies, setPopularMovies] = useState([])
+    const [topRatedMovies, setTopRatedMovies] = useState([])
 
 
-    const fetchPopularMovies = async () => {
+    const fetchTopRatedMovies = async () => {
         const response = await fetch(URL);
         const data = await response.json();
-        setPopularMovies(data.results)
+        setTopRatedMovies(data.results)
     }   
 
     return (
-        <div className={styles.PopularMovies}>
-             <h2>Popular movies:</h2>
+        <div className={styles.TopRatedMovies}>
+            <h2>TopRated Movies:</h2>
             <ul>
-                {popularMovies.map(movie => (
+                {topRatedMovies.map(movie => (
                     <li key={movie.id}>
                         <Link to={`/movies/${movie.id}`}>
                             {movie.title}
@@ -37,4 +37,4 @@ const PopularMovies = () => {
     )
 }
 
-export default PopularMovies
+export default TopRatedMovies
