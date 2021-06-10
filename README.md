@@ -1,3 +1,10 @@
+# firebase cmds
+* firebase login
+* firebase init
+* firebase deploy
+* firebase init hosting:github
+
+
 # react-firebase-boilerplate
 
 React Firebase Boilerplate | Associate Degree in Computer Programming
