@@ -6,12 +6,14 @@ import * as Routes from '../../routes';
 import { useAuth } from '../../contexts/firebase/auth.context';
 
 import styles from './MainNavigation.module.scss';
+import SwitchThemes from "./SwitchThemes";
 
 const MainNavigation = () => {
   const {currentUser, signOut} = useAuth();
 
   return (
     <nav>
+        <SwitchThemes />
       <ul>
         <li>
           <Link to={Routes.LANDING}>Home</Link>
