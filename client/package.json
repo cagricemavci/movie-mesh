@@ -28,10 +28,7 @@
     "extends": [
       "react-app",
       "react-app/jest",
-      "airbnb",
-      "prettier",
-      "prettier/prettier",
-      "plugin:prettier/recommended"
+      "airbnb"
     ],
     "rules": {
       "no-use-before-define": "off",

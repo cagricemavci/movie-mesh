@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { appConfig } from './config';
 import * as Routes from './routes';
-import { HomePage, ProjectPage, ProjectsPage, SignInPage, Browse, MovieDetails, SerieDetails } from './pages';
+import { HomePage, SignInPage, Browse, MovieDetails, SerieDetails, RegisterPage } from './pages';
 
-import {ThemeContext} from './utilities/ThemeContext.js'
+import {ThemeContext} from './contexts/theme/theme.context.js'
 
 import styles from './App.module.scss';
 
@@ -23,9 +23,8 @@ function App() {
                         <Switch>
                             <Route exact path={Routes.LANDING} component={ HomePage }/>
                             <Route from={Routes.HOME} to={Routes.LANDING}/>
-                            <Route exact path={Routes.PROJECT_DETAILS} component={ ProjectPage }/>
-                            <Route exact path={Routes.PROJECTS} component={ ProjectsPage }/>
                             <Route exact path={Routes.AUTH_SIGN_IN} component={ SignInPage }/>
+                            <Route exact path={Routes.AUTH_REGISTER} component={ RegisterPage }/>
                             <Route exact path={Routes.BROWSE} component={ Browse }/>
                             <Route exact path={Routes.MOVIE_DETAILS} component={ MovieDetails }/>
                             <Route exact path={Routes.SERIE_DETAILS} component={ SerieDetails }/>

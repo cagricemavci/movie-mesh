@@ -14,7 +14,7 @@ const MovieDetail = ({matchData}) => {
     const [movieCredits, setMovieCredits] = useState([])
 
 
-    useEffect(() => {
+    useEffect(async () => {
         fetchMovieDetail();
         fetchMovieReviews();
         fetchMovieCredits();

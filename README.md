@@ -1,7 +1,7 @@
 # firebase cmds
 * firebase login
 * firebase init
-* firebase deploy
+* firebase deploy (npm run build)
 * firebase init hosting:github
 
 
