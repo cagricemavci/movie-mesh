@@ -10,13 +10,13 @@ import faker from 'faker';
 const RegisterPage = () => {
     const history = useHistory();
 
-    const [mail, setMail] = useState();
+    const [userMail, setUserMail] = useState();
     const [password, setPassword] = useState();
 
     const registerUser = (e) => {
         e.preventDefault();
 
-        auth.createUserWithEmailAndPassword(mail, password);
+        auth.createUserWithEmailAndPassword(userMail, password);
         history.goBack()
     }
     // for (let i = 0; i < 50; i++) {
@@ -26,7 +26,6 @@ const RegisterPage = () => {
     //         console.log(email, pass);
     //         auth.createUserWithEmailAndPassword(email, pass);
     // }
- 
 
     return (
         <BaseLayout>
@@ -36,11 +35,11 @@ const RegisterPage = () => {
                         <h2>CREATE ACCOUNT</h2>
                         <div>
                             <label>Email address</label>
-                            <input type="email" placeholder="example" required="required" onChange={(e) => setMail(e.target.value)} placeholder="example@example.com..."/>
+                            <input type="email" required="required" onChange={(event) => setUserMail(event.target.value)} placeholder="example@example.com..."/>
                         </div>
                         <div>
                             <label>Password</label>
-                            <input type="password" placeholder="******" minLength="6" required="required" onChange={(e) => setPassword(e.target.value)} placeholder="Min. 6 characters..."></input>
+                            <input type="password" minLength="6" required="required" onChange={(event) => setPassword(event.target.value)} placeholder="Min. 6 characters..."></input>
                         </div>
                         
                         <button type="submit">REGISTER</button>
