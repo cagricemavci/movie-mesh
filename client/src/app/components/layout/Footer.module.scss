@@ -1,0 +1,54 @@
+@font-face {
+    font-family: "Monoton-Regular";
+    src: url('../../../assets/fonts/Monoton-Regular.ttf');
+}
+
+.footer {
+    background-color: #241B30;
+    color: white;
+    padding: 1.25rem;
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+}
+
+
+.footer nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.footer nav ul li {
+    margin: 0 0.25rem;
+    padding: 0.4rem;
+    position: relative;
+}
+
+.footer nav ul li:hover::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+    height: 3px;
+    border-radius: 2px;
+    background: linear-gradient(22deg, rgba(10,7,28,1) 0%, rgba(46,25,126,1) 35%, rgba(128,24,168,1) 100%);
+}
+
+.footer nav ul li a {
+    color: #C8CAE6;
+    font-weight: bolder;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.footer nav ul li a:hover {
+    color: #BF33F0;
+    font-weight: bolder;
+    text-transform: uppercase;
+    text-decoration: none;
+}

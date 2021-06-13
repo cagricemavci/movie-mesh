@@ -1,0 +1,21 @@
+[data-theme="light"]{
+    --text-color: #180F24;
+    --background-color: #C8CAE6;
+  }
+  
+[data-theme="dark"]{
+    --text-color: #C8CAE6;
+    --background-color: #180F24;
+}
+
+.app {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    main {
+        color: var(--text-color); 
+        background-color: var(--background-color); 
+    }
+
+}

@@ -1,0 +1,35 @@
+.List {
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 auto;
+
+    > div {
+        border-bottom: 1px solid var(--text-color);
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        overflow-x: scroll;
+        flex-wrap: nowrap;
+
+        margin-bottom: 10rem;
+        
+        li{
+            list-style: none;
+            margin-right: 1rem;
+            width: 20rem;
+
+            img {
+                width: 200px;
+                height: 300px;
+                object-fit: contain;
+            }
+        }
+
+        li:hover{
+           transform: scale(1.1);
+        }
+    }
+}
