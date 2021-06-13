@@ -36,7 +36,7 @@ const Search = (e) => {
             </button>
         <div className={styles.Search}>
             {data.map(item => 
-            <Link key={item.id} to={`movies/${item.id}`}>
+            <Link key={item.id} to={`/movies/${item.id}`}>
                 {item.title}
             </Link>)}
         </div>

@@ -30,7 +30,7 @@ const MainNavigation = () => {
           }    
         </li>
         <li>
-            <Link to={Routes.AUTH_REGISTER}>Register</Link>
+            {!currentUser && <Link to={Routes.AUTH_REGISTER}>Register</Link>}
         </li>
       </ul>
     </nav>

@@ -8,8 +8,10 @@ import PopularSeries from '../components/series/PopularSeries'
 import UpComingSeries from '../components/series/UpComingSeries';
 import TopRatedSeries from '../components/series/TopRatedSeries';
 
+import Lists from '../components/lists/Lists';
+
 const Browse = () => {
-    const [typeFilter, setTypeFilter] = useState('movie');
+    const [typeFilter, setTypeFilter] = useState('movies');
     const [scoreFilter, setScoreFilter] = useState('');
 
     function handleChangeType(e) {
@@ -26,17 +28,15 @@ const Browse = () => {
     <BaseLayout>
         <div>
             <select onChange={handleChangeType}>
-                <option>movie</option>
-                <option>serie</option>
+                <option>movies</option>
+                <option>series</option>
             </select>
 
             <input type='number' onChange={handleChangeScore} value={scoreFilter} min='0' max='10'  step='1'/>
         </div>
 
-        {typeFilter === 'movie' && <h1>Browse movies: </h1> || <h1>Browse series: </h1>}
-        {typeFilter === 'movie' && <PopularMovies score={scoreFilter}/> || <PopularSeries  score={scoreFilter} />}
-        {typeFilter === 'movie' && <UpComingMovies  score={scoreFilter} /> ||  <UpComingSeries  score={scoreFilter} />}
-        {typeFilter === 'movie' && <TopRatedMovies  score={scoreFilter} /> || <TopRatedSeries  score={scoreFilter} />}
+        <h1>Browse</h1>
+        <Lists type={typeFilter} score={scoreFilter}/>
       
     </BaseLayout>
   );

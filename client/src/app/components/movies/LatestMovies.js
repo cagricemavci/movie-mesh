@@ -9,6 +9,7 @@ const LatestMovies = () => {
     const URL = `https://api.themoviedb.org/3/movie/latest?api_key=${API_KEY}&language=en-US&page=1`
 
     const [latestMovies, setLatestMovies] = useState([])
+    const [latestTrailer, setLatestTrailer] = useState([])
 
     useEffect(() => {
         fetchLatestMovies();
@@ -19,10 +20,21 @@ const LatestMovies = () => {
             const response = await fetch(URL);
             const data = await response.json();
             setLatestMovies(data)
+            await fetchLatestTrailers();
         } catch (error) {
             
         }
-        
+    }
+
+    const fetchLatestTrailers = async () => {
+        try {
+            const API_URL_TRAILER = `https://api.themoviedb.org/3/movie/${latestMovies.id}/videos?api_key=${API_KEY}&language=en-US`
+            const response = await fetch(API_URL_TRAILER);
+            const data = await response.json();
+            setLatestTrailer(data.results)
+        } catch (error) {
+            
+        }
     }
 
     return (
@@ -38,6 +50,12 @@ const LatestMovies = () => {
                         {genre.name}
                     </li>    
                 ))}
+
+                <h1>trailers: </h1>
+                {latestTrailer && latestTrailer.map(trailer => (
+                    <li key={trailer.id}>{trailer.name}</li>
+                )
+                )}
           
         </div>
     )

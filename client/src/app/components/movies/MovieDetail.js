@@ -71,6 +71,12 @@ const MovieDetail = ({matchData}) => {
                     {movieDetail.vote_count}
                 </li>
             </ul>
+            <h1>Tags:</h1>
+            <ul>
+                {movieDetail.genres && movieDetail.genres.map(genre => 
+                    <li key={genre.id}>{genre.name}</li>
+                )}
+            </ul>
             <h1>reviews:</h1>
             <ul>
                 {movieReviews.map( (review, index) => (

@@ -2,16 +2,14 @@ import { BaseLayout } from '../layouts';
 import PopularMovies from '../components/movies/PopularMovies'
 import TrendingMovies from '../components/movies/TrendingMovies'
 import LatestMovies from '../components/movies/LatestMovies';
-import {auth} from '../utilities/firebase'
+
+import Lists from '../components/lists/Lists';
 
 const HomePage = () => {
-    auth.createUserWithEmailAndPassword("cca@cca.inc", "wegotthisyouknow");
   return (
     <BaseLayout>
-      <p>HOME PAGE</p>
-      <PopularMovies />
-      <LatestMovies />
-      <TrendingMovies />
+      <h1>HOME</h1>
+      <Lists type='movies' />
     </BaseLayout>
   );
 };
