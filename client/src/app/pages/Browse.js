@@ -24,13 +24,13 @@ const Browse = () => {
     <HeroImage />
         <div className={styles.Browse}>
 
-                 <label>Filter: movie/serie</label>
+            <label>Filter: movie/serie</label>
             <select onChange={handleChangeType}>
                 <option>movies</option>
                 <option>series</option>
             </select>
 
-                 <label>Filter: score</label>
+            <label>Filter: score</label>
             <select onChange={handleChangeScore} value={scoreFilter}>
                 <option>0</option>
                 <option>1</option>

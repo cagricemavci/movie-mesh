@@ -7,7 +7,7 @@ import {useFetch} from '../../hooks/useFetch'
 
 const List = ({link, type, score}) => {
     const [data, isLoading, error] = useFetch(link);
-    
+
     return (
         <div className={styles.List}>
             <div>

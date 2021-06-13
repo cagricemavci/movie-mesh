@@ -5,6 +5,8 @@ import { auth } from '../utilities/firebase';
 import styles from './AuthPage.module.scss';
 import { BaseLayout } from '../layouts';
 
+import faker from 'faker';
+
 const RegisterPage = () => {
     const history = useHistory();
 
@@ -17,6 +19,14 @@ const RegisterPage = () => {
         auth.createUserWithEmailAndPassword(mail, password);
         history.goBack()
     }
+    // for (let i = 0; i < 50; i++) {
+        
+    //        let email = faker.internet.email();
+    //         let pass = faker.internet.password();
+    //         console.log(email, pass);
+    //         auth.createUserWithEmailAndPassword(email, pass);
+    // }
+ 
 
     return (
         <BaseLayout>
