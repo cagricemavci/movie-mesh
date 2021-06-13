@@ -6,7 +6,7 @@ const HomePage = () => {
   return (
     <BaseLayout>
       <h1>HOME</h1>
-      <Lists type='movies' />
+      <Lists type='movies' score="0"/>
     </BaseLayout>
   );
 };
