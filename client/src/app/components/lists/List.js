@@ -10,12 +10,14 @@ const List = ({link, type, score}) => {
     
     return (
         <div className={styles.List}>
-            <h2>{link}</h2>
+            <div>
+                 <h2>{link}</h2>
+            </div>
             <ul>
                 {data && data.filter(item => {return Number(item.vote_average) >= Number(score)}).map(d => (
                     <li key={d.id}>
                         <Link to={`/${type}/${d.id}`}>
-                            {d.title && d.title || d.name}
+                            <img src={`https://image.tmdb.org/t/p/w500/${d.poster_path}`} alt={d.title && d.title || d.name}/>
                         </Link>
                     </li>    
                 ))}

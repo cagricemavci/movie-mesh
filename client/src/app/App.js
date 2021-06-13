@@ -11,7 +11,7 @@ import {ThemeContext} from './contexts/theme/theme.context.js'
 import styles from './App.module.scss';
 
 function App() {
-    const [theme, setTheme] = useState('light');
+    const [theme, setTheme] = useState('dark');
 
     return (
         <ThemeContext.Provider value={{theme, setTheme}}>

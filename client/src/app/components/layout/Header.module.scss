@@ -1,22 +1,50 @@
+@font-face {
+    font-family: "Monoton-Regular";
+    src: url('../../../assets/fonts/Monoton-Regular.ttf');
+}
 .header {
     width: 100vw;
-    background-color: #F6D0B1;
+    background-color: #241B30;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .header nav ul {
     display: flex;
     list-style: none;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .header nav ul li {
     margin: 0 0.25rem;
-    padding: 1rem;
+    padding: 0.4rem;
+    position: relative;
+}
+
+.header nav ul li:hover::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+    height: 3px;
+    border-radius: 2px;
+    background: linear-gradient(22deg, rgba(10,7,28,1) 0%, rgba(46,25,126,1) 35%, rgba(128,24,168,1) 100%);
 }
 
 .header nav ul li a {
-    color: #CE4760;
+    color: #C8CAE6;
+    font-weight: bolder;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.header nav ul li a:hover {
+    color: #BF33F0;
+    font-weight: bolder;
+    text-transform: uppercase;
     text-decoration: none;
 }

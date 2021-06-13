@@ -3,6 +3,10 @@ import { useHistory } from "react-router-dom";
 
 import { useAuth } from '../contexts/firebase/auth.context';
 
+import { BaseLayout } from '../layouts';
+import styles from './SignInPage.module.scss';
+
+
 const SignInPage = ({children}) => {
   const history = useHistory();
   const [signInForm, setSignInForm] = useState({
@@ -28,34 +32,33 @@ const SignInPage = ({children}) => {
   };
 
   return (
-    <div className="page page--sign-in">
-      <div className="container">
-        <div className="row">
-          <div className="col-12 offset-md-2 col-md-8 offset-lg-3 col-lg-6">
+    <BaseLayout>
+    <div className={styles.SignInPage}>
+        <div className="container">
             {!!currentUser === false &&
-            <form onSubmit={(ev) => handleSubmit(ev)}>
-              <div className="form-group">
-                <label htmlFor="txtEmail">Email address</label>
-                <input type="email" className="form-control" id="txtEmail" name="txtEmail"  aria-describedby="emailHelp" onChange={handleInputChange} value={signInForm.txtEmail} />
-                <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
-              </div>
-              <div className="form-group">
-                <label htmlFor="txtPassword">Password</label>
-                <input type="password" className="form-control" id="txtPassword" name="txtPassword" onChange={handleInputChange} value={signInForm.txtPassword} />
-              </div>
-              <button type="submit" className="btn btn-primary">Sign In</button>
-            </form>
+                <form onSubmit={(ev) => handleSubmit(ev)}>
+                    <h2>MEMBER LOGIN</h2>
+                    <div className="form-group">
+                        <label htmlFor="txtEmail">Email address</label>
+                        <input type="email" className="form-control" id="txtEmail" name="txtEmail"  aria-describedby="emailHelp" onChange={handleInputChange} value={signInForm.txtEmail} placeholder="example@example.com..."/>
+                        <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="txtPassword">Password</label>
+                        <input type="password" className="form-control" id="txtPassword" name="txtPassword" onChange={handleInputChange} value={signInForm.txtPassword} placeholder="Min. 6 characters..."/>
+                    </div>
+                    <button type="submit" className="btn btn-primary">LOGIN</button>
+                </form>
             }
             {!!currentUser === true && 
-              <div>
-                <img src={currentUser.photoURL} alt={currentUser.email} />
-                <button onClick={() => signOut()}>Sign out</button>
-              </div>
+                <div>
+                    <img src={currentUser.photoURL} alt={currentUser.email} />
+                    <button onClick={() => signOut()}>Sign out</button>
+                </div>
             }
-          </div>
         </div>
-      </div>      
     </div>
+    </BaseLayout>
   );
 };
 
