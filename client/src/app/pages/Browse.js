@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import { BaseLayout } from '../layouts';
 
 import Lists from '../components/lists/Lists';
+import HeroImage from "../components/layout/HeroImage";
+import styles from './Browse.module.scss';
 
 const Browse = () => {
     const [typeFilter, setTypeFilter] = useState('movies');
@@ -18,17 +20,33 @@ const Browse = () => {
     }
 
   return (
-    <BaseLayout>
-        <div>
+      <BaseLayout>
+    <HeroImage />
+        <div className={styles.Browse}>
+
+                 <label>Filter: movie/serie</label>
             <select onChange={handleChangeType}>
                 <option>movies</option>
                 <option>series</option>
             </select>
 
-            <input type='number' onChange={handleChangeScore} value={scoreFilter} min='0' max='10'  step='1'/>
+                 <label>Filter: score</label>
+            <select onChange={handleChangeScore} value={scoreFilter}>
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+            </select>
+          
         </div>
 
-        <h1>Browse</h1>
         <Lists type={typeFilter} score={scoreFilter}/>
       
     </BaseLayout>

@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { useHistory } from 'react-router-dom'
 import { auth } from '../utilities/firebase';
 
-import styles from './SignInPage.module.scss';
+import styles from './AuthPage.module.scss';
 import { BaseLayout } from '../layouts';
 
 const RegisterPage = () => {
@@ -20,7 +20,7 @@ const RegisterPage = () => {
 
     return (
         <BaseLayout>
-            <div className={styles.SignInPage}>
+            <div className={styles.AuthPage}>
                 <div className="container">
                     <form type="submit" onSubmit={registerUser}>
                         <h2>CREATE ACCOUNT</h2>

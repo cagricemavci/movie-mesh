@@ -54,51 +54,56 @@ const MovieDetail = ({matchData}) => {
     
     return (
         <div className={styles.MovieDetail}>
-            <h2>{movieDetail.title}</h2>
-            <h1>Image:</h1>
-            <img src={`https://image.tmdb.org/t/p/w500/${movieDetail.poster_path}`} alt={movieDetail.title}/>
-            <h1>synopsis:</h1>
-            <p>{movieDetail.overview}</p>
-            <h1>andere rating:</h1>
-            <ul>
-                <li>
-                    {movieDetail.popularity}
-                </li>
-                <li>
-                    {movieDetail.vote_average}
-                </li>
-                <li>
-                    {movieDetail.vote_count}
-                </li>
-            </ul>
-            <h1>Tags:</h1>
-            <ul>
-                {movieDetail.genres && movieDetail.genres.map(genre => 
-                    <li key={genre.id}>{genre.name}</li>
-                )}
-            </ul>
-            <h1>reviews:</h1>
-            <ul>
-                {movieReviews.map( (review, index) => (
-                    <li key={index}>
-                        <p>{review.author}</p>
-                        <p>{review.author_details.rating}</p>
-                        <p>{review.content}</p>
-                    </li>    
-                ))}
-            </ul>
-            <h1>Cast:</h1>
-            <ul>
-                {movieCredits.map( (cast, index) => (
-                    <li key={cast.id}>
-                     <img src={`https://image.tmdb.org/t/p/w500/${cast.profile_path}`}/>
-                     <p>{cast.name}</p>
-                     <p>{cast.original_name}</p>
-                     <p>{cast.character}</p>
-                    </li>    
-                ))}
-            </ul>
-        </div>
+            <div>
+                <div>
+
+                    <img src={`https://image.tmdb.org/t/p/w500/${movieDetail.poster_path}`} alt={movieDetail.title}/>
+                </div>
+                <div>
+                    <h1>{movieDetail.title}</h1>
+                    <p>{movieDetail.release_date}</p>
+                    <p>{movieDetail.vote_average}</p>
+                    <ul>
+                        {movieDetail.genres && movieDetail.genres.map(genre => 
+                            <li key={genre.id}>{genre.name}</li>
+                        )}
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <h2>About</h2>
+                <p>{movieDetail.overview}</p>
+            </div>
+
+            <div>
+                <h2>Cast:</h2>
+                <ul>
+                    {movieCredits.map( (cast, index) => (
+                        <li key={cast.id}>
+                            <img src={`https://image.tmdb.org/t/p/w500/${cast.profile_path}`}/>
+                            <p>{cast.name}</p>
+                            <p>As {cast.character}</p>
+                        </li>    
+                    ))}
+                </ul>
+            </div>
+           
+            <div>
+                <h2>reviews:</h2>
+                <ul>
+                    {movieReviews.map( (review, index) => (
+                        <li key={index}>
+                            <div>
+                                <p>{review.author}</p>
+                                <p>({review.author_details.rating}/10)</p>
+                            </div>
+                            <p>{review.content}</p>
+                        </li>    
+                    ))}
+                </ul>
+            </div>
+            </div>
     )
 }
 

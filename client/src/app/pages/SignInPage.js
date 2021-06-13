@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { useAuth } from '../contexts/firebase/auth.context';
 
 import { BaseLayout } from '../layouts';
-import styles from './SignInPage.module.scss';
+import styles from './AuthPage.module.scss';
 
 
 const SignInPage = ({children}) => {
@@ -33,7 +33,7 @@ const SignInPage = ({children}) => {
 
   return (
     <BaseLayout>
-    <div className={styles.SignInPage}>
+    <div className={styles.AuthPage}>
         <div className="container">
             {!!currentUser === false &&
                 <form onSubmit={(ev) => handleSubmit(ev)}>

@@ -54,44 +54,55 @@ const SerieDetail = ({matchData}) => {
     
     return (
         <div className={styles.SerieDetail}>
-            <h2>{serieDetail.title}</h2>
-            <h1>Image:</h1>
-            <img src={`https://image.tmdb.org/t/p/w500/${serieDetail.poster_path}`} alt={serieDetail.title}/>
-            <h1>synopsis:</h1>
+            <div>
+                  <div>
+
+                <img src={`https://image.tmdb.org/t/p/w500/${serieDetail.poster_path}`} alt={serieDetail.title}/>
+            </div>
+            <div>
+                <h1>{serieDetail.name}</h1>
+                <p>{serieDetail.first_air_date}</p>
+                <p> {serieDetail.vote_average}</p>
+                <ul>
+                        {serieDetail.genres && serieDetail.genres.map(genre => 
+                            <li key={genre.id}>{genre.name}</li>
+                        )}
+                    </ul>
+            </div>
+            </div>
+
+            <div>
+                <h2>About</h2>
             <p>{serieDetail.overview}</p>
-            <h1>andere rating:</h1>
-            <ul>
-                <li>
-                    {serieDetail.popularity}
-                </li>
-                <li>
-                    {serieDetail.vote_average}
-                </li>
-                <li>
-                    {serieDetail.vote_count}
-                </li>
-            </ul>
-            <h1>reviews:</h1>
-            <ul>
-                {serieReviews.map( (review, index) => (
-                    <li key={index}>
-                        <p>{review.author}</p>
-                        <p>{review.author_details.rating}</p>
-                        <p>{review.content}</p>
-                    </li>    
-                ))}
-            </ul>
-            <h1>Cast:</h1>
-            <ul>
-                {serieCredits.map( (cast, index) => (
-                    <li key={cast.id}>
-                     <img src={`https://image.tmdb.org/t/p/w500/${cast.profile_path}`}/>
-                     <p>{cast.name}</p>
-                     <p>{cast.original_name}</p>
-                     <p>{cast.character}</p>
-                    </li>    
-                ))}
-            </ul>
+            </div>
+
+            <div>
+                <h1>Cast:</h1>
+                <ul>
+                    {serieCredits.map( (cast, index) => (
+                        <li key={cast.id}>
+                            <img src={`https://image.tmdb.org/t/p/w500/${cast.profile_path}`}/>
+                            <p>{cast.name}</p>
+                            <p>As {cast.character}</p>
+                        </li>    
+                    ))}
+                </ul>
+            </div>
+
+            <div>
+                <h2>reviews:</h2>
+                <ul>
+                    {serieReviews.map( (review, index) => (
+                        <li key={index}>
+                            <div>
+                                    <p>{review.author}</p>
+                                   {review.author_details.rating && <p>({review.author_details.rating}/10)</p>}
+                                </div>
+                                <p>{review.content}</p>
+                        </li>    
+                    ))}
+                </ul>
+            </div>
         </div>
     )
 }

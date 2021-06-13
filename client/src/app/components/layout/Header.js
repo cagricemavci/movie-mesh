@@ -5,7 +5,6 @@ import styles from './Header.module.scss';
 
 import Search from "./Search";
 import SwitchThemes from "./SwitchThemes";
-import HeroImage from "./HeroImage";
 
 const Header = () => {
   return (
@@ -23,7 +22,6 @@ const Header = () => {
         <MainNavigation />
         <SwitchThemes />
         <Search />
-        <HeroImage />
     </header>
   );
 };
